@@ -36,7 +36,7 @@ class Product extends Model
         $data = $queryBuilder
             ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
             ->from($this->tableName, 'p')
-            ->innerJoin('p', 'categories', 'c', 'c.id=p.id_categories')
+            ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
             ->setFirstResult($offset)
             ->setMaxResults($perPage)
             ->orderBy('p.id', 'desc')
@@ -46,22 +46,24 @@ class Product extends Model
     }
 
     public function findByID($id)
-    {
-        return $this->queryBuilder
-            ->select('*')
-            ->from($this->tableName)
-            ->where('id = ?')
-            ->setParameter(0, $id)
-            ->fetchAssociative();
-    }
+{
+    return $this->queryBuilder
+        ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
+        ->from($this->tableName, 'p')
+        ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
+        ->where('p.id = ?')
+        ->setParameter(0, $id)
+        ->fetchAssociative();
+}
+
 
     public function insert(array $data)
     {
-        $data = [
-            'name' => 'Ahihi',
-            'email' => 'keke@gnai.com',
-            'address' => 'HN'
-        ];
+        // $data = [
+        //     'name' => 'Ahihi',
+        //     'email' => 'keke@gnai.com',
+        //     'address' => 'HN'
+        // ];
 
         if (!empty($data)) {
             $query = $this->queryBuilder->insert($this->tableName);

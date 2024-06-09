@@ -8,11 +8,6 @@
     <title>Admin </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
 
     <!-- jQuery library -->
@@ -26,19 +21,16 @@
     <div class="container">
         <div class="row text-black   mt-1">
             <div class="col-2 mt-1">
-                <img src="../../uploads/logo trường cd fpt polytechnic.jpg" class="w-25">
+                <img src="./upload/logo.png" class="w-25">
             </div>
             <div class="col-5 mt-2">
                 <ul class="nav text-black  ">
-                    <li class=" nav-item "><a class="nav-link active text-black "
-                            href="{{ url('admin') }}">Dasboard</a>
+                    <li class=" nav-item "><a class="nav-link active text-black " href="{{url("admin")}}">Dasboard</a>
                     </li>
-                    <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/products') }}">Quản lý
-                            sản
+                    <li class=" nav-item "> <a class="nav-link text-black " href="{{url('admin/products')}}">Quản lý sản
                             phẩm</a></li>
-                    <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/categories') }}">Quản lý
-                            Danh Mục</a></li>
-                    <li class=" nav-item "> <a class="nav-link text-black" href="{{ url('admin/users') }}">Quản lý người
+                    <li class=" nav-item "> <a class="nav-link text-black " href="{{url('admin/categories')}}">Quản lý Danh Mục</a></li>
+                    <li class=" nav-item "> <a class="nav-link text-black" href="{{url('admin/users')}}">Quản lý người
                             dùng</a></li>
                 </ul>
             </div>
@@ -49,25 +41,33 @@
                 </form>
             </div>
             <div class="col-2 mt-2">
-                <a href="{{ url('') }}" class=" btn btn-danger ">Quay lại client</a>
+                <a href="{{url('')}}" class=" btn btn-danger ">Quay lại client</a>
             </div>
         </div>
-
+        <!-- <nav class="mt-5">
+        <a href="{{url('admin')}}">Dasboard</a>
+        <a href="{{url('admin/products')}}">Quản lý sản phẩm</a>
+    </nav> -->
         <h1 class="mt-5 mb-3 text-center"> @yield('title')</h1>
+        <div class="row">
+            <div class="col-3">
+                @yield('add')
+            </div>
+        </div>
         <div class="row">
             @yield('content')
         </div>
-        <footer class="row bg-secondary text-center ">
-            <p> @Chu Thị Duyên</p>
-        </footer>
     </div>
 </body>
+<footer class="row bg-secondary text-center ">
+    <p> @Chu Thị Duyên</p>
 
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-</script>
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-</script>
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 
 </html>
