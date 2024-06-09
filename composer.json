@@ -1,0 +1,24 @@
+{
+    "name": "fpt/thoi_trang",
+    "autoload": {
+        "psr-4": {
+            "Fpt\\ThoiTrang\\": "src/"
+        }
+    },
+    "files":[
+        "helper.php"
+    ],
+    "authors": [
+        {
+            "name": "Duyen",
+            "email": "duyenctph39530@fpt.edu.vn"
+        }
+    ],
+    "require": {
+        "bramus/router": "^1.6",
+        "eftec/bladeone": "^4.13",
+        "doctrine/dbal": "^4.0",
+        "rakit/validation": "^1.4",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
