@@ -3,26 +3,42 @@
 @section('title')
 Thêm sản phẩm mới
 @endsection
-@section('content')
-<form action="{{url("admin/product/store")}}" method="post" enctype="multipart/form-data">
-    <label for="">ID:</label>
-    <input type="text" name="id" class=" form-control" id="">
-    <label for="">Tên sản phẩm:</label>
-    <input type="text" name="name" class=" form-control" id="">
-    <label for="">Giá:</label>
-    <input type="text" name="price" class=" form-control" id="">
-    <label for="">Ảnh:</label>
-    <input type="file" name="img" class=" form-control" id="">
-    <select name="id_categories" id="">
-        @foreach ($categoryPluck as $id => $name)
-            <option value="{{$id}}">{{$name}}</option>
-        @endforeach
+@section('content') 
+@if(!empty($_SESSION['errors']))
+    <div class="alert alert-warning">
+        <ul>
+            @foreach ($_SESSION['errors'] as $error)
+                <li>{{$error}}</li>
+            @endforeach
 
-    </select>
-    <label for="description">Mô tả:</label>
-    <input type="text" name="" class=" form-control" id="">
-    <div class="text-center m-5">
-        <button class=" btn btn-outline-primary">Thêm</button>
+        </ul>
     </div>
+    @php
+        unset($_SESSION['errors']);
+    @endphp
+@endif
+<div class="col-3"></div>
+<div class="col-6">
+    <form action="{{url('admin/products/store')}}" method="POST" enctype="multipart/form-data">
+        <label for="">Tên sản phẩm:</label>
+        <input type="text" name="name" class=" form-control" id="name">
+        <label for="">Giá:</label>
+        <input type="text" name="price" class=" form-control" id="price">
+        <label for="">Ảnh:</label>
+        <input type="file" name="img" class=" form-control" id="img" >
+        <label for="">Loại:</label>
+        <select class="form-control" name="id_categories" id="id_categories">
+            @foreach ($categoryPluck as $id => $name)
+                <option value="{{$id}}" class="form-control">{{$name}}</option>
+            @endforeach
+
+        </select>
+        <label for="description">Mô tả:</label>
+        <textarea name="description" id="description" class="form-control" placeholder="Mô tả sản phẩm..."></textarea>
+        <div class="text-center m-5">
+        <button type="submit" class="btn btn-outline-primary">Thêm</button>
+            <!-- <a href="{{url('admin/products/store')}}" class=" btn btn-outline-primary">Thêm</a> -->
+        </div>
+</div>
 </form>
 @endsection
