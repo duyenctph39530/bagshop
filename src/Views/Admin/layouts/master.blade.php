@@ -36,7 +36,7 @@
                     <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/products') }}">Quản lý
                             sản
                             phẩm</a></li>
-                    <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/categories') }}">Quản lý
+                    <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/categorys') }}">Quản lý
                             Danh Mục</a></li>
                     <li class=" nav-item "> <a class="nav-link text-black" href="{{ url('admin/users') }}">Quản lý người
                             dùng</a></li>

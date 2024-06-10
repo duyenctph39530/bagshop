@@ -34,6 +34,7 @@
                     <td>
                         <?= $user['password'] ?>
                     </td>
+
                     <td>
                         <?= $user['created_at'] ?>
                     </td>
