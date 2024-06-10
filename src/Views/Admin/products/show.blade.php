@@ -4,9 +4,20 @@
 Chi tiết sản phẩm 
 @endsection
 @section('content') 
+<div class="row justify-content-center">
+    <div class="col-lg-12">
+        <div class="white_card card_height_100 mb_30">
+            <div class="white_card_header">
+                <div class="box_header m-0">
+                    <div class="main-title">
+                        <h2 class="m-0">Danh sách</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="white_card_body">
 
-<div class="col-3"></div>
-<div class="col-6">
+                <div class="table-responsive">
+<div class="col-12">
     <form >
         <label for="">Tên sản phẩm:</label>
         <input type="text" name="name" class=" form-control" id="name"  value="{{$product['name']}}" disabled >
@@ -32,4 +43,10 @@ Chi tiết sản phẩm
         </div>
 </div>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 @endsection

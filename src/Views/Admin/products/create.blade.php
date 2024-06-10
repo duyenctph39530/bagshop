@@ -32,7 +32,7 @@ Product
             <div class="white_card_body">
 
                 <div class="table-responsive">
-                   
+
                     <div class="col-12">
                         <form action="{{url('admin/products/store')}}" method="POST" enctype="multipart/form-data">
                             <label for="">Tên sản phẩm:</label>
@@ -57,4 +57,9 @@ Product
                             </div>
                         </form>
                     </div>
-                    @endsection
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

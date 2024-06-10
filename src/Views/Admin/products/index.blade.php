@@ -4,6 +4,10 @@
 
 @endsection
 @section('add')
+<a href="{{asset('admin/products/create')}}" class="white_btn3">Thêm mới</a>
+
+@endsection
+@section('add')
 <a href="{{url('admin/products/create')}}" class="btn btn-primary m-3">Thêm</a>
 @endsection
 
