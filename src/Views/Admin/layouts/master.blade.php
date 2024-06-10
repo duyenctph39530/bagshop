@@ -10,7 +10,6 @@
     <title>Sales</title>
     @include('layouts.partials.css')
 </head>
-
 <body class="crm_body_bg">
 
     @include('layouts.partials.nav')
@@ -33,6 +32,35 @@
                 </div>
                 @yield('content')
 
+=======
+<body>
+    <div class="container">
+        <div class="row text-black   mt-1">
+            <div class="col-2 mt-1">
+                <img src="../../uploads/logo trường cd fpt polytechnic.jpg" class="w-25">
+            </div>
+            <div class="col-5 mt-2">
+                <ul class="nav text-black  ">
+                    <li class=" nav-item "><a class="nav-link active text-black "
+                            href="{{ url('admin') }}">Dasboard</a>
+                    </li>
+                    <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/products') }}">Quản lý
+                            sản
+                            phẩm</a></li>
+                    <li class=" nav-item "> <a class="nav-link text-black " href="{{ url('admin/categorys') }}">Quản lý
+                            Danh Mục</a></li>
+                    <li class=" nav-item "> <a class="nav-link text-black" href="{{ url('admin/users') }}">Quản lý người
+                            dùng</a></li>
+                </ul>
+            </div>
+            <div class="col-3 mt-2">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm...." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Tìm</button>
+                </form>
+            </div>
+            <div class="col-2 mt-2">
+                <a href="{{ url('') }}" class=" btn btn-danger ">Quay lại client</a>
             </div>
         </div>
 
