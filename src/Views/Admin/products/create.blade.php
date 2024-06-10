@@ -25,7 +25,7 @@ Thêm sản phẩm mới
         <label for="">Giá:</label>
         <input type="text" name="price" class=" form-control" id="price">
         <label for="">Ảnh:</label>
-        <input type="file" name="img" class=" form-control" id="img">
+        <input type="file" name="img" class=" form-control" id="img" >
         <label for="">Loại:</label>
         <select class="form-control" name="id_categories" id="id_categories">
             @foreach ($categoryPluck as $id => $name)

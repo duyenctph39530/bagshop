@@ -35,7 +35,7 @@ Sửa sản phẩm mới
         <input type="text" name="price" class=" form-control" id="price" value="{{$product['price']}}">
         <label for="">Ảnh:</label>
         <input type="file" name="img" class=" form-control" id="img" >
-        <img src="{{ asset($product['img'] )}}" alt=""> <br>
+        <img src="{{ asset($product['img'] )}}" alt="" width="50px"> <br>
         <label for="">Loại:</label>
         <select class="form-control" name="id_categories" id="id_categories">
             @foreach ($categoryPluck as $id => $name)

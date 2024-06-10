@@ -97,16 +97,29 @@ class ProductController extends Controller
         ]);
 
     }
-    public function show($id)
-    {
-        $product = $this->product->findByID($id);
-        $products = $this->product->all();
-        // Helper::debug($totalPage);
-        $this->renderViewAdmin('products.show', [
-            'products' => $products,
+    // public function show($id)
+    // {
+    //     $product = $this->product->findByID($id);
+    //     $products = $this->product->all();
+    //     // Helper::debug($totalPage);
+    //     $this->renderViewAdmin('products.show', [
+    //         'product' => $product,
+    //         'products' => $products
           
+    //     ]);
+    // }
+    public function show($id)
+{
+    $product = $this->product->findByID($id);
+        $categories = $this->category->all();
+        $categoryPluck = array_column($categories, 'name', 'id');
+        // Helper::debug($categoryPluck);
+        $this->renderViewAdmin('products.show', [
+            'product' => $product,
+            'categoryPluck' => $categoryPluck
         ]);
-    }
+}
+
     public function update($id)
     {
         $product = $this->product->findByID($id);
@@ -159,6 +172,24 @@ class ProductController extends Controller
         $_SESSION['status'] = true;
         $_SESSION['msg'] = 'Thao tác thành công :)';
         header('Location:' . url('admin/products'));
+        exit;
+    }
+    public function delete($id)
+    {
+        try{
+            $product=$this->product->findByID($id);
+            $this->product->delete($id);
+            if($product['img']&& file_exists(PATH_ROOT.$product['img'])){
+                unlink(PATH_ROOT.$product['img']);
+            }
+            $_SESSION['status']=true;
+            $_SESSION['msg']='Thao tác thánh công!';
+
+        }catch(\Throwable $th){
+            $_SESSION['status']=false;
+            $_SESSION['msg']='Thao tác không thành công :(';
+        }
+        header('Location:'.url('admin/products'));
         exit;
     }
     
