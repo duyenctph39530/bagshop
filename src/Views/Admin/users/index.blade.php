@@ -11,6 +11,7 @@
                 <th>Avata</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Phân quyền</th>
                 <th>Creater at</th>
                 <th>Update at</th>
                 <th>Action</th>
@@ -34,7 +35,13 @@
                     <td>
                         <?= $user['password'] ?>
                     </td>
-
+                    <td>
+                        @if ($user['role'] == '1')
+                            Quản trị viên
+                        @else
+                            Người dùng
+                        @endif
+                    </td>
                     <td>
                         <?= $user['created_at'] ?>
                     </td>
