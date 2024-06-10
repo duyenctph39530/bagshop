@@ -15,7 +15,7 @@
                     <span>Dashboard</span>
                 </a>
                 <ul>
-                    <li><a class="" href="admin/products">Product</a></li>
+                    <li><a class="" href="products">Product</a></li>
                     <li><a href="users">User</a></li>
                     <li><a href="catogories">Category</a></li>
                 </ul>
