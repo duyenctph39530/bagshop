@@ -2,24 +2,24 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-white">
             <a class="navbar-brand order-1" href="index.html">
-                <img class="img-fluid" width="50px" src="{{ asset('assets/uploads/logo.png') }}" alt="Reader | Hugo Personal Blog Template">
+                <img class="img-fluid" width="50px" src="{{ asset('assets/uploads/logo.png') }}"
+                    alt="Reader | Hugo Personal Blog Template">
             </a>
             <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ url('') }}" > Trang Chủ</a>
-                           
+                        <a class="nav-link" href="{{ url('') }}"> Trang Chủ</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ asset('products') }}"  >
+                        <a class="nav-link" href="{{ asset('products') }}">
                             Sản phẩm <i class="ti-angle-down ml-1"></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('products/small') }}">Túi cỡ nhỏ</a>
-                            <a class="dropdown-item" href="{{ asset('products/medium') }}">Túi cỡ trung</a>
-                            <a class="dropdown-item" href="{{ asset('products/big') }}">Túi cỡ lớn</a>
-                            <a class="dropdown-item" href="{{ asset('products/wallet') }}">Ví</a>
-                            <a class="dropdown-item" href="{{ asset('products/backpack') }}">Balo</a>
+                            <a class="dropdown-item" href="{{ asset('products/small/1') }}">Túi cỡ nhỏ</a>
+                            <a class="dropdown-item" href="{{ asset('products/medium/2') }}">Túi cỡ trung</a>
+                            <a class="dropdown-item" href="{{ asset('products/big/3') }}">Túi cỡ lớn</a>
+                            <a class="dropdown-item" href="{{ asset('products/wallet/4') }}">Ví</a>
+                            <a class="dropdown-item" href="{{ asset('products/backpack/5') }}">Balo</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -37,14 +37,19 @@
                     <input id="search-query" name="s" type="search" placeholder="Tìm kiếm ...">
                 </form>
 
-                <button class="navbar-toggler border-0 order-1" type="button" data-toggle="collapse" data-target="#navigation">
+                <button class="navbar-toggler border-0 order-1" type="button" data-toggle="collapse"
+                    data-target="#navigation">
                     <i class="ti-menu"></i>
                 </button>
                 <div class="d-flex align-items-center ml-3">
-                    <a href="" class="mr-3"><img src="{{ asset('assets/uploads/cart.png') }}" width="30px" alt=""></a>
-                    <a href=""><img src="{{ asset('assets/uploads/icon.png') }}" width="30px" alt=""></a>
+                    <a href="" class="mr-3"><img src="{{ asset('assets/uploads/cart.png') }}" width="30px"
+                            alt=""></a>
+                    <a href=""><img src="{{ asset('assets/uploads/icon.png') }}" width="30px" alt="">
+
                 </div>
+                </a>
             </div>
-        </nav>
+    </div>
+    </nav>
     </div>
 </header>

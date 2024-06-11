@@ -1,14 +1,11 @@
 <?php echo $this->runChild('layouts.partials.head'); ?>
-
 <body>
  <?php echo $this->runChild('layouts.partials.header'); ?>
  <?php echo $this->yieldContent('banner'); ?>
  <?php echo $this->yieldContent('content'); ?>
  <?php echo $this->yieldContent('sale'); ?>
-
- <?php echo $this->runChild('layouts.partials.footer'); ?>
-
-
 </body>
+<?php echo $this->runChild('layouts.partials.footer'); ?>
+</html>
 <?php echo $this->runChild('layouts.partials.script'); ?>
 </html>

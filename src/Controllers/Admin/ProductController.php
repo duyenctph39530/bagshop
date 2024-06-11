@@ -97,17 +97,7 @@ class ProductController extends Controller
         ]);
 
     }
-    // public function show($id)
-    // {
-    //     $product = $this->product->findByID($id);
-    //     $products = $this->product->all();
-    //     // Helper::debug($totalPage);
-    //     $this->renderViewAdmin('products.show', [
-    //         'product' => $product,
-    //         'products' => $products
-          
-    //     ]);
-    // }
+  
     public function show($id)
 {
     $product = $this->product->findByID($id);
