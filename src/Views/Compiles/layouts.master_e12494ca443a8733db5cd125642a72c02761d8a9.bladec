@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
+
+<!-- Mirrored from demo.dashboardpack.com/sales-html/Board.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 May 2024 07:24:15 GMT -->
 
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Admin </title>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
- integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
- <!-- Latest compiled and minified CSS -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
- <!-- Latest compiled JavaScript -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-
- <!-- jQuery library -->
- <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
-
- <!-- Latest compiled JavaScript -->
- <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+ <title>Sales</title>
+ <?php echo $this->runChild('layouts.partials.css'); ?>
 </head>
+<body class="crm_body_bg">
 
+ <?php echo $this->runChild('layouts.partials.nav'); ?>
+ <section class="main_content dashboard_part large_header_bg">
+
+ <?php echo $this->runChild('layouts.partials.header'); ?>
+
+ <div class="main_content_iner overly_inner ">
+ <div class="container-fluid p-0 ">
+
+ <div class="row">
+ <div class="col-12">
+ <div class="page_title_box d-flex align-items-center justify-content-between">
+ <div class="page_title_left">
+ <h3 class="f_s_30 f_w_700 text_white"><?php echo $this->yieldContent('title'); ?></h3>
+ </div>
+ <a href="#" class="white_btn3">Create Report</a>
+ </div>
+ </div>
+ </div>
+ <?php echo $this->yieldContent('content'); ?>
+
+=======
 <body>
  <div class="container">
  <div class="row text-black   mt-1">
@@ -53,21 +64,20 @@
  </div>
  </div>
 
- <h1 class="mt-5 mb-3 text-center"> <?php echo $this->yieldContent('title'); ?></h1>
- <div class="row">
- <?php echo $this->yieldContent('content'); ?>
+
+ <?php echo $this->runChild('layouts.partials.footer'); ?>
+ </section>
+
+
+ <div id="back-top" style="display: none;">
+ <a title="Go to Top" href="#">
+ <i class="ti-angle-up"></i>
+ </a>
  </div>
- <footer class="row bg-secondary text-center ">
- <p> @Chu Thị Duyên</p>
- </footer>
- </div>
+
+ <?php echo $this->runChild('layouts.partials.js'); ?>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
- integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
- integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-</script>
+<!-- Mirrored from demo.dashboardpack.com/sales-html/Board.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 May 2024 07:24:15 GMT -->
 
 </html>
