@@ -49,6 +49,17 @@ class Product extends Model
             ->setParameter(0, $id)
             ->fetchAssociative();
     }
+    public function findByCategoryID($idCategory)
+    {
+        $queryBuilder = clone $this->queryBuilder;
+        return $queryBuilder
+            ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
+            ->from($this->tableName, 'p')
+            ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
+            ->where('p.id_categories = ?')
+            ->setParameter(0, $idCategory)
+            ->fetchAllAssociative();
+    }
 
     public function insert(array $data)
     {

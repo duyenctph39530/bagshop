@@ -45,4 +45,12 @@ use Fpt\ThoiTrang\Models\Product;
         $this->renderViewClient('contact', [
         ]);
     }
+    public function small($idCategory)
+    {
+        $products = $this->product->findByCategoryID($idCategory);
+        // Helper::debug($products);
+        $this->renderViewClient('products.productsmall', [
+            'products'=>$products
+        ]);
+    }
  }

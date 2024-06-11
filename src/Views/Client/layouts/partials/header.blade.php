@@ -15,11 +15,11 @@
                             Sản phẩm <i class="ti-angle-down ml-1"></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ asset('products/small') }}">Túi cỡ nhỏ</a>
-                            <a class="dropdown-item" href="{{ asset('products/medium') }}">Túi cỡ trung</a>
-                            <a class="dropdown-item" href="{{ asset('products/big') }}">Túi cỡ lớn</a>
-                            <a class="dropdown-item" href="{{ asset('products/wallet') }}">Ví</a>
-                            <a class="dropdown-item" href="{{ asset('products/backpack') }}">Balo</a>
+                            <a class="dropdown-item" href="{{ asset('products/small/1') }}">Túi cỡ nhỏ</a>
+                            <a class="dropdown-item" href="{{ asset('products/medium/2') }}">Túi cỡ trung</a>
+                            <a class="dropdown-item" href="{{ asset('products/big/3') }}">Túi cỡ lớn</a>
+                            <a class="dropdown-item" href="{{ asset('products/wallet/4') }}">Ví</a>
+                            <a class="dropdown-item" href="{{ asset('products/backpack/5') }}">Balo</a>
                         </div>
                     </li>
                     <li class="nav-item">
