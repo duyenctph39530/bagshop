@@ -130,6 +130,16 @@ class Model
             ->executeQuery();
     }
 
+    public function findUserByName($name)
+    {
+        return $this->queryBuilder
+            ->select('*')
+            ->from($this->tableName)
+            ->where('name = ?')
+            ->setParameter(0, $name)
+            ->fetchAssociative();
+    }
+
     public function __destruct()
     {
         $this->conn = null;

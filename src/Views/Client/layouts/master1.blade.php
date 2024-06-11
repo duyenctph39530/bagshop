@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row  text-black p-2  mt-1">
                 <div class="col-2 mt-1">
-                    <img src="{{asset('assets/uploads/logo.png')}}" class="w-25">
+                    <img src="{{ asset('assets/uploads/logo.png') }}" class="w-25">
                 </div>
                 <div class="col-5 mt-2">
                     <ul class="nav text-black  ">
@@ -43,10 +43,25 @@
                     </form>
                 </div>
                 <div class="col-1 mt-2">
-                    <a href="?act=cart"> <img src="{{asset('assets/uploads/cart.png')}}" class="w-50" alt=""></a>
+                    <a href=""> <img src="{{ asset('assets/uploads/cart.png') }}" class="w-50"
+                            alt=""></a>
                 </div>
                 <div class="col-1 mt-2">
-                    <a href="?act=cart"> <img src="{{asset('assets/uploads/iconpeople.png')}}" class="w-50" alt=""></a>
+                    @if (isset($_SESSION['user']))
+                        @if ($_SESSION['user']['role'] == 1)
+                            <a href="{{ url('admin/users') }}"> {{ $_SESSION['user']['name'] }} </a>
+                            <a href="">Đăng xuất</a>
+                        @else
+                            <a href="{{ url('') }}"> {{ $_SESSION['user']['name'] }} </a>
+                            <a href="{{ url('logout') }}">
+                                Đăng xuất
+                            </a>
+                        @endif
+                    @else
+                        <a href="{{ url('login') }}">
+                            <img src="{{ asset('assets/uploads/iconpeople.png') }}" class="w-50" alt="">
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -65,11 +80,11 @@
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
 
     </html>
 </body>
