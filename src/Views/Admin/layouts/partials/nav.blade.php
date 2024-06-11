@@ -15,9 +15,9 @@
                     <span>Dashboard</span>
                 </a>
                 <ul>
-                    <li><a class="" href="admin/products">Product</a></li>
-                    <li><a href="users">User</a></li>
-                    <li><a href="catogories">Category</a></li>
+                    <li><a class="" href="{{asset('admin/products')}}">Product</a></li>
+                    <li><a href="{{asset('admin/users')}}">User</a></li>
+                    <li><a href="{{asset('admin/categorys')}}">Category</a></li>
                 </ul>
             </li>
             <li class>
@@ -54,8 +54,8 @@
                     <span>Category</span>
                 </a>
                 <ul>
-                    <li><a href="{{asset('admin/categories/create')}}">Danh sách</a></li>
-                    <li><a href="{{asset('admin/categories/create')}}">Thêm</a></li>
+                    <li><a href="{{asset('admin/categorys')}}">Danh sách</a></li>
+                    <li><a href="{{asset('admin/categorys/create')}}">Thêm</a></li>
                     <!-- <li><a href="Max_Length.html">Max Length</a></li>
                     <li><a href="Layouts.html">Layouts</a></li> -->
                 </ul>

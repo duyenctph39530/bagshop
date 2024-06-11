@@ -1,7 +1,7 @@
 <?php $_shouldextend[1]=1; ?>
 
 <?php $this->startSection('title'); ?>
-Thêm sản phẩm mới
+Product
 <?php $this->stopSection(); ?>
 <?php $this->startSection('content'); ?> 
 <?php if(!empty($_SESSION['errors'])): ?>
@@ -18,15 +18,30 @@ Thêm sản phẩm mới
  unset($_SESSION['errors']);
  ?>
 <?php endif; ?>
-<div class="col-3"></div>
-<div class="col-6">
+
+
+<div class="row justify-content-center">
+ <div class="col-lg-12">
+ <div class="white_card card_height_100 mb_30">
+ <div class="white_card_header">
+ <div class="box_header m-0">
+ <div class="main-title">
+ <h2 class="m-0">Thêm sản phẩm</h2>
+ </div>
+ </div>
+ </div>
+ <div class="white_card_body">
+
+ <div class="table-responsive">
+
+ <div class="col-12">
  <form action="<?php echo \htmlentities(url('admin/products/store')??'', ENT_QUOTES, 'UTF-8', false); ?>" method="POST" enctype="multipart/form-data">
  <label for="">Tên sản phẩm:</label>
  <input type="text" name="name" class=" form-control" id="name">
  <label for="">Giá:</label>
  <input type="text" name="price" class=" form-control" id="price">
  <label for="">Ảnh:</label>
- <input type="file" name="img" class=" form-control" id="img" >
+ <input type="file" name="img" class=" form-control" id="img">
  <label for="">Loại:</label>
  <select class="form-control" name="id_categories" id="id_categories">
  <?php $__currentLoopData = $categoryPluck; $this->addLoop($__currentLoopData);$this->getFirstLoop();
@@ -36,12 +51,18 @@ Thêm sản phẩm mới
 
  </select>
  <label for="description">Mô tả:</label>
- <textarea name="description" id="description" class="form-control" placeholder="Mô tả sản phẩm..."></textarea>
+ <textarea name="description" id="description" class="form-control"
+ placeholder="Mô tả sản phẩm..."></textarea>
  <div class="text-center m-5">
  <button type="submit" class="btn btn-outline-primary">Thêm</button>
  <!-- <a href="<?php echo \htmlentities(url('admin/products/store')??'', ENT_QUOTES, 'UTF-8', false); ?>" class=" btn btn-outline-primary">Thêm</a> -->
  </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
 </div>
-</form>
 <?php $this->stopSection(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.master'); } ?>
