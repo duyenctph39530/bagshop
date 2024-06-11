@@ -10,7 +10,6 @@
  <title>Sales</title>
  <?php echo $this->runChild('layouts.partials.css'); ?>
 </head>
-
 <body class="crm_body_bg">
 
  <?php echo $this->runChild('layouts.partials.nav'); ?>
@@ -27,16 +26,11 @@
  <div class="page_title_left">
  <h3 class="f_s_30 f_w_700 text_white"><?php echo $this->yieldContent('title'); ?></h3>
  </div>
- <a href="#" class="white_btn3">Create Report</a>
+ <?php echo $this->yieldContent('add'); ?> 
  </div>
  </div>
  </div>
  <?php echo $this->yieldContent('content'); ?>
-
- </div>
- </div>
-
-
  <?php echo $this->runChild('layouts.partials.footer'); ?>
  </section>
 
