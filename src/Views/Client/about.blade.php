@@ -1,7 +1,13 @@
 @extends('layouts.master1')
 @section('content')
-<h2 class="h5 section-title p-3">Giới thiệu</h2>
-<div class="row m-3">
+<section class="section-sm">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12  mb-3 mb-lg-0">
+                <h2 class="h5 section-title p-3">Giới thiệu </h2>
+                <div class="row text-center p-3">
+                    <div class="col-12 d-flex flex-wrap justify-content-center m-3">
+                    <div class="row m-3">
     <h4> <i> "Không có phụ nữ xấu, chỉ có phụ nữ không biết làm đẹp "</i>- Trích câu danh ngôn nổi
         tiếng
         của LaBruyere để thay lời của Juno - những người góp phần tôn vinh, khơi dậy vẻ đẹp phụ nữ
@@ -61,4 +67,12 @@
         thành
         đạt, hạnh phúc và thịnh vượng của mọi phụ nữ Việt Nam.</p>
 </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection

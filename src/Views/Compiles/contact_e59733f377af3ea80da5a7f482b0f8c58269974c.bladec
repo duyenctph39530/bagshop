@@ -5,11 +5,11 @@
  <div class="row justify-content-center">
  <div class="col-lg-12  mb-3 mb-lg-0">
  <h2 class="h5 section-title p-3">Liên hệ</h2>
- <div class="row text-center p-3">
+ <div class="row  p-3">
  <div class="col-12 d-flex flex-wrap justify-content-center m-3">
- <div class="row m-3">
+ 
  <div class="col-4">
- <h2 class="h5 section-title p-3">Liên hệ</h2>
+ <h2 class="">Liên hệ</h2>
  <form action="">
  <label for="">Địa chỉ chúng tôi</label>
  <input type="text" class=" form-control " disabled
@@ -25,7 +25,7 @@
  </div>
  <div class="col-2"></div>
  <div class="col-6">
- <h2 class="h5 section-title p-3">Gửi thắc mắc cho chúng tôi</h2>
+ <h2 class="">Gửi thắc mắc cho chúng tôi</h2>
  <form action="">
  <label for="">Tên của bạn</label>
  <input type="text" class=" form-control ">
@@ -41,7 +41,6 @@
  </div>
 
  </form>
- </div>
  </div>
  </div>
  </div>

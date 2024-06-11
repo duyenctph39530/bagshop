@@ -36,13 +36,13 @@ use Fpt\ThoiTrang\Models\Product;
     public function about()
     {
         
-        $this->renderViewClient('products.about', [
+        $this->renderViewClient('about', [
         ]);
     }
     public function contact()
     {
         
-        $this->renderViewClient('products.contact', [
+        $this->renderViewClient('contact', [
         ]);
     }
  }
