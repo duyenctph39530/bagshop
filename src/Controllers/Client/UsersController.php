@@ -90,7 +90,6 @@ class UsersController extends Controller
         } else {
             $user = $this->user->findUserByName($_POST['name']);
             if ($user && password_verify($_POST['password'], $user['password'])) {
-                $_SESSION['success'] = 'Đăng nhập thành công!';
                 $_SESSION['user'] = $user;
                 $this->user->all();
                 header('location: ' . url(''));
@@ -98,6 +97,7 @@ class UsersController extends Controller
             } else {
                 $_SESSION['errors'] = 'Tên người dùng hoặc mật khẩu không đúng.';
                 header('location: ' . url('login'));
+                // unset($_SESSION['errors']);
                 exit; // Thêm exit để ngăn chặn mã tiếp tục thực thi
             }
         }
@@ -105,7 +105,10 @@ class UsersController extends Controller
 
     public function logout()
     {
+        session_start();
         unset($_SESSION['user']);
-        header('location: ' . url(''));
+        unset($_SESSION['erros']);
+        header('Location: ' . url(''));
+        exit();
     }
 }

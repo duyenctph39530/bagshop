@@ -1,10 +1,10 @@
 @extends('layouts.master1')
 @section('content')
     <div class="container">
-        <div class="row text-center m-5 ">
+        <div class="text-center mt-5 ">
             <h2>LOGIN</h2>
         </div>
-        @if (!empty($_SESSION['errors']))
+        @if (isset($_SESSION['errors']))
             <div class="alert alert-danger">
                 @if (is_array($_SESSION['errors']))
                     <ul>
@@ -29,9 +29,13 @@
                     <label for="" class="form-label">Password:</label>
                     <input type="text" class="form-control" name="password" placeholder="Enter Password">
                 </div>
+                <div>
+                    <a href="{{ url('register') }}">Create account free! Here</a>
+                </div>
                 <div class="text-center mt-3">
                     <button type="submit" style="width: 25%" class="btn btn-primary">LOGIN</button>
                 </div>
+
             </form>
         </div>
     </div>

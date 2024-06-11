@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse text-center order-lg-2 order-3" id="navigation">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="{{ asset('') }}" > Trang Chủ</a>
+                        <a class="nav-link" href="{{ url('') }}" > Trang Chủ</a>
                            
                     </li>
                     <li class="nav-item dropdown">

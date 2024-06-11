@@ -50,7 +50,9 @@
                     <input type="hidden" name="role" value="2">
                 </div>
                 <div class="text-center">
+                    <a class="btn btn-secondary" href="{{ url('login') }}">Quay lại</a>
                     <button type="submit" style="width: 25%" class="btn btn-primary">REGISTER</button>
+
                 </div>
             </form>
         </div>
