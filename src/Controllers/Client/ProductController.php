@@ -52,5 +52,41 @@ use Fpt\ThoiTrang\Models\Product;
         $this->renderViewClient('products.productsmall', [
             'products'=>$products
         ]);
+       
     }
- }
+ 
+
+    public function medium($idCategory)
+    {
+        $products = $this->product->findByCategoryID($idCategory);
+        // Helper::debug($products);
+        $this->renderViewClient('products.productmedium', [
+            'products' => $products
+        ]);
+    }
+    public function big($idCategory)
+    {
+        $products = $this->product->findByCategoryID($idCategory);
+        // Helper::debug($products);
+        $this->renderViewClient('products.productbig', [
+            'products' => $products
+        ]);
+    }
+    public function wallet($idCategory)
+    {
+        $products = $this->product->findByCategoryID($idCategory);
+        // Helper::debug($products);
+        $this->renderViewClient('products.productwallet', [
+            'products' => $products
+        ]);
+    }
+    
+    public function backpuck($idCategory)
+    {
+        $products = $this->product->findByCategoryID($idCategory);
+        // Helper::debug($products);
+        $this->renderViewClient('products.productbackpuck', [
+            'products' => $products
+        ]);
+    }
+}
