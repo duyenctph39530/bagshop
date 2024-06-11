@@ -44,8 +44,22 @@
                 <div class="d-flex align-items-center ml-3">
                     <a href="" class="mr-3"><img src="{{ asset('assets/uploads/cart.png') }}" width="30px"
                             alt=""></a>
-                    <a href=""><img src="{{ asset('assets/uploads/icon.png') }}" width="30px" alt="">
 
+                </div>
+                <div class="col-1 mt-2">
+                    @if (isset($_SESSION['user']))
+                        @if ($_SESSION['user']['role'] == 1)
+                            <a href="{{ url('admin/users') }}">{{ $_SESSION['user']['name'] }}</a>
+                            <a href="{{ url('logout') }}">Đăng xuất</a>
+                        @else
+                            <a href="{{ url('') }}">{{ $_SESSION['user']['name'] }}</a>
+                            <a href="{{ url('logout') }}">Đăng xuất</a>
+                        @endif
+                    @else
+                        <a href="{{ url('login') }}">
+                            <img src="{{ asset('assets/uploads/iconpeople.png') }}" width="30px" alt="">
+                        </a>
+                    @endif
                 </div>
                 </a>
             </div>
