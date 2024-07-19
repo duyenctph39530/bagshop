@@ -9,18 +9,25 @@ class Product extends Model
 
     public function all()
     {
-        $queryBuilder = clone $this->queryBuilder;
-        return $queryBuilder
+        return $this->queryBuilder
             ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
             ->from($this->tableName, 'p')
-            ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
+            ->innerJoin('p', 'categories', 'c', 'c.id=p.id_categories')
             ->orderBy('p.id', 'desc')
             ->fetchAllAssociative();
-    }
 
-    public function paginate($page = 1, $perPage = 6)
+    }
+    // public function count()
+    // {
+    //     return $this->queryBuilder
+    //         ->select("COUNT(*) as $this->tableName")
+    //         ->from($this->tableName)
+    //         ->fetchOne();
+    // }
+
+    public function paginate($page = 1, $perPage = 5)
     {
-        $queryBuilder = clone $this->queryBuilder;
+        $queryBuilder = clone ($this->queryBuilder);
 
         $totalPage = ceil($this->count() / $perPage);
 
@@ -29,7 +36,7 @@ class Product extends Model
         $data = $queryBuilder
             ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
             ->from($this->tableName, 'p')
-            ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
+            ->innerJoin('p', 'categories', 'c', 'c.id=p.id_categories')
             ->setFirstResult($offset)
             ->setMaxResults($perPage)
             ->orderBy('p.id', 'desc')
@@ -40,39 +47,38 @@ class Product extends Model
 
     public function findByID($id)
     {
-        $queryBuilder = clone $this->queryBuilder;
-        return $queryBuilder
-            ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
-            ->from($this->tableName, 'p')
-            ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
-            ->where('p.id = ?')
+        return $this->queryBuilder
+            ->select('*')
+            ->from($this->tableName)
+            ->where('id = ?')
             ->setParameter(0, $id)
             ->fetchAssociative();
-    }
-    public function findByCategoryID($idCategory)
-    {
-        $queryBuilder = clone $this->queryBuilder;
-        return $queryBuilder
-            ->select('p.id', 'p.name', 'p.price', 'p.img', 'p.id_categories', 'p.description', 'p.created_at', 'p.updated_at', 'c.name as c_name')
-            ->from($this->tableName, 'p')
-            ->innerJoin('p', 'categories', 'c', 'c.id = p.id_categories')
-            ->where('p.id_categories = ?')
-            ->setParameter(0, $idCategory)
-            ->fetchAllAssociative();
     }
 
     public function insert(array $data)
     {
+        // $data = [
+        //     'name' => 'Ahihi',
+        //     'email' => 'keke@gnai.com',
+        //     'address' => 'HN'
+        // ];
+
         if (!empty($data)) {
             $query = $this->queryBuilder->insert($this->tableName);
+
+            // $query->setValue('name', '?')->setParameter(0, $data['name']);
+            // $query->setValue('email', '?')->setParameter(1, $data['email']);
+            // $query->setValue('address', '?')->setParameter(2, $data['address']);
 
             $index = 0;
             foreach ($data as $key => $value) {
                 $query->setValue($key, '?')->setParameter($index, $value);
+
                 ++$index;
             }
 
             $query->executeQuery();
+
             return true;
         }
 
@@ -84,9 +90,16 @@ class Product extends Model
         if (!empty($data)) {
             $query = $this->queryBuilder->update($this->tableName);
 
+            // $data = [
+            //     'name' => 'Ahihi',
+            //     'email' => 'keke@gnai.com',
+            //     'address' => 'HN'
+            // ];
+
             $index = 0;
             foreach ($data as $key => $value) {
                 $query->set($key, '?')->setParameter($index, $value);
+
                 ++$index;
             }
 

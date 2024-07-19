@@ -42,10 +42,9 @@ class ProductController extends Controller
         $validator = new Validator;
         $validator = $validator->make($_POST + $_FILES, [
 
-            'name' => 'required|max:100',
-            'price' => 'required',
+            'id_category' => 'required|max:100',
+            'name' => 'required',
             'img' => 'uploaded_file:0,2048k,png,jpeg,jpg',
-            'id_categories' => 'required',
             'description' => 'max:65000',
         ]);
 
@@ -54,14 +53,14 @@ class ProductController extends Controller
             // Helper::debug($validator->errors());
 
             $_SESSION['errors'] = $validator->errors()->firstOfALl();
-            header('Location:' . url('admin/products/create'));
+            header('Location:' . url('products/create'));
             exit;
 
         } else {
             $data = [
+                'id_category' => $_POST['id_category'],
                 'name' => $_POST['name'],
-                'price' => $_POST['price'],
-                'id_categories  ' => $_POST['id_categories'],
+                'img  ' => $_POST['img'],
                 'description' => $_POST['description'],
             ];
             // Helper::debug($data);
@@ -74,7 +73,7 @@ class ProductController extends Controller
 
                 } else {
                     $_SESSION['errors']['img'] = 'Upload Không Thành công!';
-                    header('Location:' . url('admin/products/create'));
+                    header('Location:' . url('products/create'));
                     exit;
                 }
             }
